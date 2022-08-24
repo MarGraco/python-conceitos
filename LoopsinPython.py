@@ -12,8 +12,6 @@ else:
     print("i is now larger or equal to 5")
 
 
-
-
 '''my_list = ["Segunda", "Terceira", "Quarta", "Quinta"]
 for x in my_list:
     print(f"Happy {x}!")
