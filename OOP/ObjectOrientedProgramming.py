@@ -1,3 +1,6 @@
+from distutils.command.build_scripts import first_line_re
+
+
 class Student:
 
     number_of_students = 0
@@ -22,20 +25,16 @@ class Student:
     def set_online_school(cls, new_school):
         cls.school = new_school
 
-
+    @classmethod
+    def split_students(cls, student_str):
+        first_name, last_name, major = student_str.split('.')
+        return cls(first_name, last_name, major)
 
 student_1 = Student('Eric', 'Roby', 'Computer Science')
 student_2 = Student('John', 'John', 'Math')
-print(student_1.school)
-print(student_2.school)
-
-
-
-print(f'Number_of_students = {Student.number_of_students}')
-print(student_1.fullname_major_school())
-print(student_2.fullname_with_major())
-print(f'Number_of_students = {Student.number_of_students}')
-
+new_student = 'Adil.Yutzy.English'
+student_3 = Student.split_students(new_student)
+print(student_3.fullname_major_school())
 
 
 '''student_1 = Student()
